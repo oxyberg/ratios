@@ -1,0 +1,32 @@
+.tab {
+    @extend .text-title;
+
+    background-color: $gray-10;
+    border-radius: 12px;
+    padding: 9.5px 20px 12.5px 20px;
+    display: inline-block;
+    color: $base-black;
+    position: relative;
+    cursor: pointer;
+    transition: $animation;
+
+    &:hover {
+        background-color: $gray-20;
+    }
+
+    &.active {
+        background-color: $base-black;
+        color: $base-white;
+        cursor: default;
+    }
+
+    &::after {
+        @extend .text-special;
+
+        top: 4px;
+        right: 6px;
+        content: attr(data-hotkey);
+        color: $gray-40;
+        position: absolute;
+    }
+}
